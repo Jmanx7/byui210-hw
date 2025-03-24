@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 public class PromptGenerator
 {
@@ -13,14 +16,15 @@ public class PromptGenerator
         "Who did you spend time with today? "
     };
     
-    
     public string GetRandomPrompt()
     {
-        // https://www.techiedelight.com/access-random-item-in-list-in-csharp/
         Random rnd = new Random();
         int randIndex = rnd.Next(_prompts.Count);
-        string random = _prompts[randIndex];
-        Console.WriteLine($"{random}");
-        return "";
+        string randomprompt = _prompts[randIndex];
+        Console.WriteLine($"{randomprompt}");
+        //Entry Entry = new Entry();
+        //Entry._promptText = randomprompt;
+        return randomprompt;
     }
+    // used for help with random function https://www.techiedelight.com/access-random-item-in-list-in-csharp/
 }
